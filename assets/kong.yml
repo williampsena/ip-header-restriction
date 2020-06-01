@@ -1,0 +1,18 @@
+
+_format_version: "1.1"
+
+services:
+- name: hello_world
+  url: https://example.com
+  plugins:
+  - name: ip-header-restriction
+    config:
+        headers:
+            - X-Forwarded-For
+            - X-My-Ip
+        whitelist: 
+            - 127.0.0.1
+  routes:
+  - name: hello_world
+    paths:
+    - /
