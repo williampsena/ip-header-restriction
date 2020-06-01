@@ -17,14 +17,14 @@ docker-compose up -d
 
 ```bash
 # allowed request
-curl --location --request GET 'http://localhost:8000/hello_world' \
+curl --location --request GET 'http://localhost:8000' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'X-Forwarded-For: 127.0.0.1' \
 --data-raw ''
 
 # request blocked
-curl --location --request GET 'http://localhost:8000/hello_world' \
+curl --location --request GET 'http://localhost:8000' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'X-Forwarded-For: 127.0.0.2' \
